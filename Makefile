@@ -15,3 +15,7 @@ display/mesh.o: display/mesh.cpp display/mesh.h
 TARGETS += display/light.o
 display/light.o: display/light.h display/light.cpp
 	g++ $(CFLAGS) -c -o display/light.o display/light.cpp
+
+TARGETS += display/object.o
+display/object.o: display/mesh.h display/object.h display/object.cpp
+	g++ $(CFLAGS) -c -o display/object.o display/object.cpp
