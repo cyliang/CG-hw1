@@ -4,6 +4,7 @@
 
 #include "mesh.h"
 #include <iostream>
+#include <cstring>
 
 const char* obj_database = "";	// 定義 mesh 的預設目錄
 
