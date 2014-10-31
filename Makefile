@@ -23,3 +23,7 @@ display/object.o: display/mesh.h display/object.h display/object.cpp
 TARGETS += display/scene.o
 display/scene.o: display/mesh.h display/object.h display/scene.h display/scene.cpp
 	g++ $(CFLAGS) -c -o display/scene.o display/scene.cpp
+
+TARGETS += display/viewing.o
+display/viewing.o: display/viewing.h display/viewing.cpp
+	g++ $(CFLAGS) -c -o display/viewing.o display/viewing.cpp
