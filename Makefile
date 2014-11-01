@@ -1,8 +1,17 @@
 all: hw1_run
 	
+ifdef SCENE
+MACRO += -DSCENE_FILE=\"$(SCENE)\"
+endif
+ifdef LIGHT
+MACRO += -DLIGHT_FILE=\"$(LIGHT)\"
+endif
+ifdef VIEW
+MACRO += -DVIEW_FILE=\"$(VIEW)\"
+endif
 
 LINK += -lGL -lGLU -lglut
-CFLAGS = 
+CFLAGS += $(MACRO)
 
 TARGETS += display/mesh.o
 display/mesh.o: display/mesh.cpp display/mesh.h

@@ -70,3 +70,11 @@ void ViewingLoader::setViewing() {
 
 	glViewport(viewport_xywh[0], viewport_xywh[1], viewport_xywh[2], viewport_xywh[3]);
 }
+
+int ViewingLoader::getWidth() const {
+	return (int) viewport_xywh[2];
+}
+
+int ViewingLoader::getHeight() const {
+	return (int) viewport_xywh[3];
+}

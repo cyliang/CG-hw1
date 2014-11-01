@@ -3,7 +3,10 @@
 class ViewingLoader {
 public:
 	ViewingLoader(const char *ViewingFile);
+
 	void setViewing();
+	int getWidth() const;
+	int getHeight() const;
 
 private:
 	float eye_xyz[3];
