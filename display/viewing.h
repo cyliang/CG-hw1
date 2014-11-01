@@ -4,9 +4,12 @@ class ViewingLoader {
 public:
 	ViewingLoader(const char *ViewingFile);
 
-	void setViewing();
+	void setViewing() const;
 	int getWidth() const;
 	int getHeight() const;
+
+	void zoom(bool inOut);
+	void rotate(bool leftRight);
 
 private:
 	float eye_xyz[3];
@@ -16,4 +19,6 @@ private:
 	float dnear;
 	float dfar;
 	float viewport_xywh[4];
+
+	float rotate_angle;
 };

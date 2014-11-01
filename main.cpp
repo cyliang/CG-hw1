@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
 	glutCreateWindow("GL-Assignment1 0116229");
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
-	//glutKeyboardFunc(/* TODO */);
+	glutKeyboardFunc(keyboard);
 	//glutMouseFunc(/* TODO */);
 	glutMainLoop();
 	return 0;

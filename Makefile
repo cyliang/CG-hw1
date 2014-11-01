@@ -38,6 +38,10 @@ TARGETS += display.o
 display.o: header.h display/viewing.h display/scene.h display/object.h display/mesh.h display/light.h display.cpp
 	g++ $(CFLAGS) -c -o display.o display.cpp
 
+TARGETS += kbd_mouse.o
+kbd_mouse.o: header.h display/viewing.h display/scene.h display/object.h display/mesh.h display/light.h kbd_mouse.cpp
+	g++ $(CFLAGS) -c -o kbd_mouse.o kbd_mouse.cpp
+
 TARGETS += main.o
 main.o: header.h display/viewing.h display/scene.h display/object.h display/mesh.h display/light.h main.cpp
 	g++ $(CFLAGS) -c -o main.o main.cpp

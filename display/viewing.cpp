@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <string>
 
-ViewingLoader::ViewingLoader(const char *file_name) {
+ViewingLoader::ViewingLoader(const char *file_name):rotate_angle(0) {
 	std::ifstream ifile(file_name, std::ios::in);
 	if(!ifile) {
 		std::cerr << "Cannot load the viewing file: " << file_name << std::endl;
@@ -55,14 +55,18 @@ ViewingLoader::ViewingLoader(const char *file_name) {
 	}
 }
 
-void ViewingLoader::setViewing() {
+void ViewingLoader::setViewing() const {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
+
 	gluLookAt(
 		eye_xyz[0], eye_xyz[1], eye_xyz[2],
 		vat_xyz[0], vat_xyz[1], vat_xyz[2],
 		vup_xyz[0], vup_xyz[1], vup_xyz[2]
 	);
+	glTranslatef(vat_xyz[0], vat_xyz[1], vat_xyz[2]);
+	glRotatef(rotate_angle, 0, 1, 0);
+	glTranslatef(-vat_xyz[0], -vat_xyz[1], -vat_xyz[2]);
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -77,4 +81,15 @@ int ViewingLoader::getWidth() const {
 
 int ViewingLoader::getHeight() const {
 	return (int) viewport_xywh[3];
+}
+
+void ViewingLoader::zoom(bool inOut) {
+	if(inOut && fovy > 10)
+		fovy -= 10;
+	else if(!inOut && fovy < 80)
+		fovy += 10;
+}
+
+void ViewingLoader::rotate(bool lR) {
+	rotate_angle += lR ? 10 : -10;
 }

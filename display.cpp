@@ -12,4 +12,5 @@ void display() {
 	returnScene().displayScene();
 
 	glutSwapBuffers();
+	glFlush();
 }
