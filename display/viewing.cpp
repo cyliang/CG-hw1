@@ -83,6 +83,11 @@ int ViewingLoader::getHeight() const {
 	return (int) viewport_xywh[3];
 }
 
+void ViewingLoader::setWidthHeight(float w, float h) {
+	viewport_xywh[2] = w;
+	viewport_xywh[3] = h;
+}
+
 void ViewingLoader::zoom(bool inOut) {
 	if(inOut && fovy > 10)
 		fovy -= 10;

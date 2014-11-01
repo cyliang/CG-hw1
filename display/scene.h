@@ -6,7 +6,9 @@ class SceneLoader {
 public:
 	SceneLoader(const char *SceneInfoFile);
 	void displayScene() const;
+
 	void moveObj(float x_diff, float y_diff);
+	void select(int nthObj);
 
 private:
 	struct Model {
@@ -19,4 +21,5 @@ private:
 	};
 
 	std::vector<Model> models;
+	int selection;
 };

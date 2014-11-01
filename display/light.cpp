@@ -47,7 +47,7 @@ GLenum light_enum[8] = {
 	GL_LIGHT4,
 	GL_LIGHT5,
 	GL_LIGHT6,
-	GL_LIGHT7,
+	GL_LIGHT7
 };
 
 void LightLoader::setLight() const {

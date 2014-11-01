@@ -7,6 +7,7 @@ public:
 	void setViewing() const;
 	int getWidth() const;
 	int getHeight() const;
+	void setWidthHeight(float width, float height);
 
 	void zoom(bool inOut);
 	void rotate(bool leftRight);

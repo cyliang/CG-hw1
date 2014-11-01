@@ -8,7 +8,7 @@
 SceneLoader::Model::Model(const char *file_name): obj(file_name) {
 }
 
-SceneLoader::SceneLoader(const char *info_file) {
+SceneLoader::SceneLoader(const char *info_file): selection(0) {
 	std::ifstream ifile(info_file, std::ios::in);
 	if(!ifile) {
 		std::cerr << "Cannot load scene file: " << info_file << std::endl;
@@ -55,5 +55,12 @@ void SceneLoader::displayScene() const {
 	}
 }
 
-void moveObj(float x, float y) {
-};
+void SceneLoader::select(int n) {
+	if(n >= 0 && n < 9)
+		selection = n;
+}
+
+void SceneLoader::moveObj(float x, float y) {
+	models[selection].translate_xyz[0] += x;
+	models[selection].translate_xyz[1] += y;
+}

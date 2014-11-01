@@ -9,13 +9,13 @@ int main(int argc, char *argv[]) {
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboard);
-	//glutMouseFunc(/* TODO */);
+	glutMouseFunc(mouse);
 	glutMainLoop();
 	return 0;
 }
 
-void reshape(GLsizei, GLsizei) {
-	returnView().setViewing();
+void reshape(GLsizei w, GLsizei h) {
+	returnView().setWidthHeight(w, h);
 }
 
 LightLoader &returnLight() {
