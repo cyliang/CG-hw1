@@ -6,7 +6,7 @@ CFLAGS =
 
 TARGETS += display/mesh.o
 display/mesh.o: display/mesh.cpp display/mesh.h
-	g++ $(CFLAGS) -c -o display/mesh.o display/mesh.cpp
+	g++ $(CFLAGS) -Wno-conversion-null -c -o display/mesh.o display/mesh.cpp
 
 
 TARGETS += display/light.o
@@ -36,3 +36,6 @@ main.o: header.h display/viewing.h display/scene.h display/object.h display/mesh
 hw1_run: $(TARGETS) header.h display/viewing.h display/scene.h display/object.h display/mesh.h display/light.h
 	g++ $(CFLAGS) $(LINK) -o hw1_run $(TARGETS)
 
+.PHONY: clean
+clean:
+	rm -f $(TARGETS)

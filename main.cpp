@@ -3,6 +3,7 @@
 int main(int argc, char *argv[]) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA|GLUT_DEPTH);
+	glutInitWindowSize(1000, 500);
 	glutCreateWindow("GL-Assignment1 0116229");
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);

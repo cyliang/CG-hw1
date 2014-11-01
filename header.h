@@ -5,9 +5,15 @@
 #include "display/scene.h"
 #include "display/viewing.h"
 
+#ifndef SCENE_FILE
 #define SCENE_FILE "scene.scene"
+#endif
+#ifndef LIGHT_FILE
 #define LIGHT_FILE "light.light"
+#endif
+#ifndef VIEW_FILE
 #define VIEW_FILE "view.view"
+#endif
 
 void display();
 void reshape(GLsizei, GLsizei);
