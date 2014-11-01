@@ -26,3 +26,6 @@
 *.exe
 *.out
 *.app
+hw1_run
+
+TestScene*

@@ -4,9 +4,6 @@ all: hw1_run
 LINK += -lGL -lGLU -lglut
 CFLAGS = 
 
-hw1_run: $(TARGETS) header.h
-	g++ $(CFLAGS) $(LINK) -o hw1_run $(TARGETS)
-
 TARGETS += display/mesh.o
 display/mesh.o: display/mesh.cpp display/mesh.h
 	g++ $(CFLAGS) -c -o display/mesh.o display/mesh.cpp
@@ -27,3 +24,15 @@ display/scene.o: display/mesh.h display/object.h display/scene.h display/scene.c
 TARGETS += display/viewing.o
 display/viewing.o: display/viewing.h display/viewing.cpp
 	g++ $(CFLAGS) -c -o display/viewing.o display/viewing.cpp
+
+TARGETS += display.o
+display.o: header.h display/viewing.h display/scene.h display/object.h display/mesh.h display/light.h display.cpp
+	g++ $(CFLAGS) -c -o display.o display.cpp
+
+TARGETS += main.o
+main.o: header.h display/viewing.h display/scene.h display/object.h display/mesh.h display/light.h main.cpp
+	g++ $(CFLAGS) -c -o main.o main.cpp
+
+hw1_run: $(TARGETS) header.h display/viewing.h display/scene.h display/object.h display/mesh.h display/light.h
+	g++ $(CFLAGS) $(LINK) -o hw1_run $(TARGETS)
+
