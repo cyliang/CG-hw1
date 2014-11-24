@@ -65,7 +65,7 @@ void ViewingLoader::setViewing() const {
 		vup_xyz[0], vup_xyz[1], vup_xyz[2]
 	);
 	glTranslatef(vat_xyz[0], vat_xyz[1], vat_xyz[2]);
-	glRotatef(rotate_angle, 0, 1, 0);
+	glRotatef(rotate_angle, vup_xyz[0], vup_xyz[1], vup_xyz[2]);
 	glTranslatef(-vat_xyz[0], -vat_xyz[1], -vat_xyz[2]);
 
 	glMatrixMode(GL_PROJECTION);

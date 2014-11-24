@@ -61,6 +61,8 @@ void SceneLoader::select(int n) {
 }
 
 void SceneLoader::moveObj(float x, float y) {
-	models[selection].translate_xyz[0] += x;
-	models[selection].translate_xyz[1] += y;
+	if(selection < models.size()) {
+		models[selection].translate_xyz[0] += x;
+		models[selection].translate_xyz[1] += y;
+	}
 }

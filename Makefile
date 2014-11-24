@@ -51,4 +51,4 @@ hw1_run: $(TARGETS) header.h display/viewing.h display/scene.h display/object.h 
 
 .PHONY: clean
 clean:
-	rm -f $(TARGETS)
+	rm -f $(TARGETS) hw1_run
