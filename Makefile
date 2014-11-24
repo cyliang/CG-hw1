@@ -10,7 +10,7 @@ ifdef VIEW
 MACRO += -DVIEW_FILE=\"$(VIEW)\"
 endif
 
-LINK += -lGL -lGLU -lglut
+LINK += -lGL -lGLU -lGLEW -lglut -lfreeimage
 CFLAGS += $(MACRO)
 
 TARGETS += display/mesh.o
