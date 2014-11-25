@@ -7,13 +7,13 @@
 #include "display/viewing.h"
 
 #ifndef SCENE_FILE
-#define SCENE_FILE "scene.scene"
+#define SCENE_FILE "Chess.scene"
 #endif
 #ifndef LIGHT_FILE
-#define LIGHT_FILE "light.light"
+#define LIGHT_FILE "Chess.light"
 #endif
 #ifndef VIEW_FILE
-#define VIEW_FILE "view.view"
+#define VIEW_FILE "Chess.view"
 #endif
 
 void display();

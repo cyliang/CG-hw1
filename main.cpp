@@ -6,6 +6,7 @@ int main(int argc, char *argv[]) {
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(returnView().getWidth(), returnView().getHeight());
 	glutCreateWindow("GL-Assignment1 0116229");
+	glewInit();
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboard);

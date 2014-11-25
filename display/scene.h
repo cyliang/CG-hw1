@@ -12,7 +12,7 @@ public:
 
 private:
 	struct Model {
-		Model(const char *objFileName);
+		Model(const char *objFileName, const Texture *);
 
 		ObjLoader obj;
 		float scale_xyz[3];

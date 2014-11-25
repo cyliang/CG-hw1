@@ -17,7 +17,6 @@ TARGETS += display/mesh.o
 display/mesh.o: display/mesh.cpp display/mesh.h
 	g++ $(CFLAGS) -Wno-conversion-null -c -o display/mesh.o display/mesh.cpp
 
-
 TARGETS += display/light.o
 display/light.o: display/light.h display/light.cpp
 	g++ $(CFLAGS) -c -o display/light.o display/light.cpp
@@ -33,6 +32,10 @@ display/scene.o: display/mesh.h display/object.h display/scene.h display/scene.c
 TARGETS += display/viewing.o
 display/viewing.o: display/viewing.h display/viewing.cpp
 	g++ $(CFLAGS) -c -o display/viewing.o display/viewing.cpp
+
+TARGETS += display/texture.o
+display/texture.o: display/texture.h display/texture.cpp
+	g++ $(CFLAGS) -c -o display/texture.o display/texture.cpp
 
 TARGETS += display.o
 display.o: header.h display/viewing.h display/scene.h display/object.h display/mesh.h display/light.h display.cpp
